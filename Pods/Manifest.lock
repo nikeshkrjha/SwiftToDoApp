@@ -1,0 +1,29 @@
+PODS:
+  - Alamofire (4.7.0)
+  - IQKeyboardManager (5.0.7)
+  - LLSpinner (0.0.1)
+  - Realm (3.1.1):
+    - Realm/Headers (= 3.1.1)
+  - Realm/Headers (3.1.1)
+  - RealmSwift (3.1.1):
+    - Realm (= 3.1.1)
+  - Sheriff (0.3.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - IQKeyboardManager
+  - LLSpinner
+  - RealmSwift
+  - Sheriff
+
+SPEC CHECKSUMS:
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
+  LLSpinner: 0ed607d59b3a447ddd157c29ef684de7a5a285ad
+  Realm: 42d1c38a5b1bbcc828b48a7ce702cb86fc68adf4
+  RealmSwift: d31937ca6a6ee54acde64ec839523c0a3c04924b
+  Sheriff: d3d03fe6d35aa781e3f42d48f3fb53ed7d04958d
+
+PODFILE CHECKSUM: e2096a5a2f7e4520284fe9070b2121923a8e5518
+
+COCOAPODS: 1.1.1
