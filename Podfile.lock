@@ -1,7 +1,11 @@
 PODS:
   - Alamofire (4.7.0)
+  - AlamofireObjectMapper (5.0.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 3.0)
   - IQKeyboardManager (5.0.7)
   - LLSpinner (0.0.1)
+  - ObjectMapper (3.1.0)
   - Realm (3.1.1):
     - Realm/Headers (= 3.1.1)
   - Realm/Headers (3.1.1)
@@ -11,6 +15,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - AlamofireObjectMapper (~> 5.0)
   - IQKeyboardManager
   - LLSpinner
   - RealmSwift
@@ -18,12 +23,14 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
   IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
   LLSpinner: 0ed607d59b3a447ddd157c29ef684de7a5a285ad
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Realm: 42d1c38a5b1bbcc828b48a7ce702cb86fc68adf4
   RealmSwift: d31937ca6a6ee54acde64ec839523c0a3c04924b
   Sheriff: d3d03fe6d35aa781e3f42d48f3fb53ed7d04958d
 
-PODFILE CHECKSUM: e2096a5a2f7e4520284fe9070b2121923a8e5518
+PODFILE CHECKSUM: ef2f7b094b592ea824f913425faaf5aed459b6e3
 
 COCOAPODS: 1.1.1

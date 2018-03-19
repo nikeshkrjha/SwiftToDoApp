@@ -11,6 +11,7 @@ target 'MyTodoApp' do
    pod 'IQKeyboardManager'
    pod 'LLSpinner'
    pod 'Sheriff'
+   pod 'AlamofireObjectMapper', '~> 5.0'
 
   target 'MyTodoAppTests' do
     inherit! :search_paths
