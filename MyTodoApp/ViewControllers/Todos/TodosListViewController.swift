@@ -68,5 +68,15 @@ extension TodosListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedItem = todoListItems[indexPath.row]
+        
+        //navigate to the details view
+        let detailsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: StoryboardIdentifiers.TodoDetailsVC) as! TodoDetailsViewController
+        detailsController.todoItem = selectedItem
+        self.navigationController?.pushViewController(detailsController, animated: true)
+        
+    }
 }
 

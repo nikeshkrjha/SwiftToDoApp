@@ -14,35 +14,10 @@ import SVProgressHUD
 class ApiHandler {
     
     static func getTodos(){
-        //        Alamofire.request(ApiConstants.BaseURL).responseJSON { response in
-        //            print("Request: \(String(describing: response.request))")   // original url request
-        //            print("Response: \(String(describing: response.response))") // http url response
-        //            print("Result: \(response.result)")                         // response serialization result
-        //
-        //            if let json = response.result.value {
-        //                print("JSON: \(json)") // serialized json response
-        //            }
-        //
-        //            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-        //                print("Data: \(utf8Text)") // original server data as UTF8 string
-        //            }
-        //        }
-        
-        
-        //        Alamofire.request(ApiConstants.BaseURL).responseObject { (response: DataResponse<TodoItem>) in
-        //            let todos: TodoItem = response.data
-        //            debugPrint(String(data: todos, encoding: .utf8))
-        //        }
-        
-        
         let URL = ApiConstants.BaseURL
         Alamofire.request(URL).responseArray { (response: DataResponse<[TodoItem]>) in
-            //            debugPrint(String(data: response.data!, encoding: .utf8))
             debugPrint(response.result.value?.toJSON())
-            
         }
-        
-        
     }
     
     
@@ -50,11 +25,24 @@ class ApiHandler {
         let URL = ApiConstants.BaseURL
         ProgressHud.showProgressHUDWtih(message: "Loading data...")
         Alamofire.request(URL).responseArray { (response: DataResponse<[TodoItem]>) in
-            //            debugPrint(String(data: response.data!, encoding: .utf8))
+            debugPrint("URL:  \(URL)")
             debugPrint(response.result.value?.toJSON())
             completion(true,response.result.value!)
-            
         }
+    }
+    
+    static func updateTodoItem(item: TodoItem, completion: @escaping(Bool, TodoItem?) -> Void){
+        let URL = ApiConstants.UpdateTodoURL + "\(item.id!)"
+        let parameters = ["id": item.id!, "title": item.title!, "userId": item.userId!, "completed": true] as [String : Any]
+        let headers = ["Content-type": "application/json; charset=UTF-8"]
+        debugPrint(parameters)
+        debugPrint(headers)
+        
+        Alamofire.request(URL, method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: headers ).response { (response) in
+            debugPrint(response.data?.description)
+            completion(true, nil)
+        }
+        
     }
 }
 

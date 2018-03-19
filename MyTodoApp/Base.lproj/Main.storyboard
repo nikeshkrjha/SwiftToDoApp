@@ -33,9 +33,9 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9f-UL-sQs">
                                                     <rect key="frame" x="0.0" y="5" width="355" height="40"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Nikesh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uq-9S-wu2">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Nikesh" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uq-9S-wu2">
                                                             <rect key="frame" x="0.0" y="0.0" width="301" height="40"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -89,11 +89,72 @@
                     <navigationItem key="navigationItem" title="MyTodoApp" id="rjc-zC-MGc"/>
                     <connections>
                         <outlet property="todoTableView" destination="ra1-Ty-v1q" id="3nV-2B-x3h"/>
+                        <segue destination="ftI-en-hZa" kind="show" id="Xm4-8a-L4Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="133.5832083958021"/>
+        </scene>
+        <!--Todo Details View Controller-->
+        <scene sceneID="Wdf-qC-cfX">
+            <objects>
+                <viewController storyboardIdentifier="TodoDetailsViewController" id="ftI-en-hZa" customClass="TodoDetailsViewController" customModule="MyTodoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UDn-yC-9QV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHW-r4-gTa">
+                                <rect key="frame" x="10" y="64" width="355" height="593"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfy-cO-in3">
+                                        <rect key="frame" x="271" y="225" width="84" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="84" id="6cd-jG-AmA"/>
+                                            <constraint firstAttribute="height" constant="44" id="bZV-Kp-kij"/>
+                                        </constraints>
+                                        <state key="normal" title="Update"/>
+                                        <connections>
+                                            <action selector="updateTodoItem:" destination="ftI-en-hZa" eventType="touchUpInside" id="NuU-zs-1vd"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="GUP-RF-0Fg">
+                                        <rect key="frame" x="0.0" y="10" width="355" height="200"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="fFZ-3h-mfr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="GUP-RF-0Fg" firstAttribute="leading" secondItem="wHW-r4-gTa" secondAttribute="leading" id="C3u-eQ-7Qb"/>
+                                    <constraint firstItem="GUP-RF-0Fg" firstAttribute="top" secondItem="wHW-r4-gTa" secondAttribute="top" constant="10" id="Feg-20-Hrr"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mfy-cO-in3" secondAttribute="trailing" id="FmH-dk-etA"/>
+                                    <constraint firstItem="Mfy-cO-in3" firstAttribute="top" secondItem="GUP-RF-0Fg" secondAttribute="bottom" constant="15" id="SRd-fp-MZB"/>
+                                    <constraint firstAttribute="trailing" secondItem="GUP-RF-0Fg" secondAttribute="trailing" id="nPD-iI-pmz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wHW-r4-gTa" firstAttribute="top" secondItem="hVM-s2-A1I" secondAttribute="top" id="IJD-yx-70E"/>
+                            <constraint firstItem="hVM-s2-A1I" firstAttribute="trailing" secondItem="wHW-r4-gTa" secondAttribute="trailing" constant="10" id="P6i-kj-0hp"/>
+                            <constraint firstItem="hVM-s2-A1I" firstAttribute="bottom" secondItem="wHW-r4-gTa" secondAttribute="bottom" constant="10" id="SBy-dh-4yo"/>
+                            <constraint firstItem="wHW-r4-gTa" firstAttribute="leading" secondItem="hVM-s2-A1I" secondAttribute="leading" constant="10" id="sTn-2w-5O5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hVM-s2-A1I"/>
+                    </view>
+                    <connections>
+                        <outlet property="todoDetailsTxtField" destination="GUP-RF-0Fg" id="gSr-pS-2Sc"/>
+                        <outlet property="updateBtn" destination="Mfy-cO-in3" id="MAd-Vs-R1E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="skY-7K-8OU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1316" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jl7-fW-qZt">

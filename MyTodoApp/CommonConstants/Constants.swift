@@ -9,10 +9,12 @@
 import Foundation
 
 struct ApiConstants {
-    static let BaseURL: String = "https://jsonplaceholder.typicode.com/todos?_limit=10"
+    static let BaseURL: String = "https://jsonplaceholder.typicode.com/todos?_limit=20"
+    static let UpdateTodoURL = "https://jsonplaceholder.typicode.com/todos/"
 }
 
 
 struct StoryboardIdentifiers{
     static let TodoListCell = "TodoTableViewCell"
+    static let TodoDetailsVC = "TodoDetailsViewController"
 }
