@@ -12,6 +12,7 @@ PODS:
   - RealmSwift (3.1.1):
     - Realm (= 3.1.1)
   - Sheriff (0.3.2)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - LLSpinner
   - RealmSwift
   - Sheriff
+  - SVProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
@@ -30,7 +32,8 @@ SPEC CHECKSUMS:
   Realm: 42d1c38a5b1bbcc828b48a7ce702cb86fc68adf4
   RealmSwift: d31937ca6a6ee54acde64ec839523c0a3c04924b
   Sheriff: d3d03fe6d35aa781e3f42d48f3fb53ed7d04958d
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: ef2f7b094b592ea824f913425faaf5aed459b6e3
+PODFILE CHECKSUM: 7bcd65a605cd0a11f683eaa61c9d74bff2ce3edf
 
 COCOAPODS: 1.1.1

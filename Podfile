@@ -12,6 +12,7 @@ target 'MyTodoApp' do
    pod 'LLSpinner'
    pod 'Sheriff'
    pod 'AlamofireObjectMapper', '~> 5.0'
+   pod 'SVProgressHUD'
 
   target 'MyTodoAppTests' do
     inherit! :search_paths
