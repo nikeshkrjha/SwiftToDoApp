@@ -21,7 +21,7 @@ class TodosListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -91,6 +91,21 @@ extension TodosListViewController: UITableViewDelegate, UITableViewDataSource {
         detailsController.todoItem = selectedItem
         self.navigationController?.pushViewController(detailsController, animated: true)
         
+    }
+    
+   
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            // remove the item from the data model
+            todoListItems.remove(at: indexPath.row)
+            
+            // delete the table view row
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+        } else if editingStyle == .insert {
+            // Not used in our example, but if you were adding a new row, this is where you would do it.
+        }
     }
 }
 
