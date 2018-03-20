@@ -3,6 +3,9 @@ PODS:
   - AlamofireObjectMapper (5.0.0):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 3.0)
+  - FMDB (2.7.2):
+    - FMDB/standard (= 2.7.2)
+  - FMDB/standard (2.7.2)
   - IQKeyboardManager (5.0.7)
   - LLSpinner (0.0.1)
   - MaterialComponents/Buttons (46.1.0):
@@ -36,6 +39,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireObjectMapper (~> 5.0)
+  - FMDB
   - IQKeyboardManager
   - LLSpinner
   - MaterialComponents/Buttons
@@ -46,6 +50,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
+  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
   IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
   LLSpinner: 0ed607d59b3a447ddd157c29ef684de7a5a285ad
   MaterialComponents: f14582653f35407ff1aef50e705a15c1b0d0b70c
@@ -57,6 +62,6 @@ SPEC CHECKSUMS:
   Sheriff: d3d03fe6d35aa781e3f42d48f3fb53ed7d04958d
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: c14d4d47c5dac0e74962b2c5773c45f13dc223c1
+PODFILE CHECKSUM: a423925d30c83bc5ce5f254a7872c1ef48a907f4
 
 COCOAPODS: 1.1.1

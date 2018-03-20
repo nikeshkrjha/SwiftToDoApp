@@ -56,7 +56,6 @@ class ProgressHud: NSObject {
             lMessage = message
         }
         SVProgressHUD.setDefaultStyle(.custom)
-//        SVProgressHUD.setForegroundColor(ThemeManager.color(.themeBlue))
         SVProgressHUD.setBackgroundColor (.clear)
         SVProgressHUD.setDefaultMaskType(.clear)
         SVProgressHUD.setRingNoTextRadius(20)

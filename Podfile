@@ -14,6 +14,7 @@ target 'MyTodoApp' do
    pod 'AlamofireObjectMapper', '~> 5.0'
    pod 'SVProgressHUD'
    pod 'MaterialComponents/Buttons'
+   pod 'FMDB'
 
   target 'MyTodoAppTests' do
     inherit! :search_paths

@@ -42,6 +42,8 @@ class CreateTodoViewController: UIViewController {
         todoTextView.layer.borderWidth = 1
         cancelBtn.layer.cornerRadius = 15
         saveBtn.layer.cornerRadius = 15
+        saveBtn.backgroundColor = UIColor.hexStringToUIColor(hex: ColorConstants.ThemeColor)
+        cancelBtn.backgroundColor = UIColor.hexStringToUIColor(hex: ColorConstants.ThemeColor)
     }
     
     

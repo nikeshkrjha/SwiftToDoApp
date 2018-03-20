@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TodosListViewController: UIViewController {
+class TodosListViewController: BaseViewController {
     
     //MARK:- Outlets
     @IBOutlet weak var todoTableView: UITableView!
@@ -26,6 +26,9 @@ class TodosListViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         todoTableView.delegate = self
