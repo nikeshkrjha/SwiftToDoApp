@@ -12,6 +12,7 @@ class TodosListViewController: UIViewController {
     
     //MARK:- Outlets
     @IBOutlet weak var todoTableView: UITableView!
+    @IBOutlet weak var addNewTodoBtn: UIBarButtonItem!
     
     //MARK:- Data for tableView
     var todoListItems: [TodoItem] = []
@@ -42,6 +43,16 @@ class TodosListViewController: UIViewController {
             }
         }
     }
+    
+    
+    @IBAction func addNewTodoItem(_ sender: Any) {
+        let storyboard  = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: StoryboardIdentifiers.CreateTodoVC)
+        vc.modalPresentationStyle = .overCurrentContext
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true, completion:nil)
+    }
+    
 }
 
 
