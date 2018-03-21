@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TodosListViewController: BaseViewController {
+class TodosListViewController: BaseViewController, CreateTodoProtocol {
     
     //MARK:- Outlets
     @IBOutlet weak var todoTableView: UITableView!
@@ -50,10 +50,15 @@ class TodosListViewController: BaseViewController {
     
     @IBAction func addNewTodoItem(_ sender: Any) {
         let storyboard  = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: StoryboardIdentifiers.CreateTodoVC)
+        let vc = storyboard.instantiateViewController(withIdentifier: StoryboardIdentifiers.CreateTodoVC) as! CreateTodoViewController
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
+        vc.createTodoProtcol = self
         present(vc, animated: true, completion:nil)
+    }
+    
+    func reloadData(){
+        prepareData()
     }
     
 }
@@ -107,5 +112,7 @@ extension TodosListViewController: UITableViewDelegate, UITableViewDataSource {
             // Not used in our example, but if you were adding a new row, this is where you would do it.
         }
     }
+    
+    
 }
 

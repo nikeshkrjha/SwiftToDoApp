@@ -16,8 +16,12 @@ class TodoItem: Mappable {
     var completed: Bool = false
     
     
+    convenience init(){
+        self.init()
+    }
+    
     struct SerializationKeys{
-        static var userId = "userId"
+        static var userId = "user_id"
         static var id = "id"
         static var title = "title"
         static var completed = "completed"

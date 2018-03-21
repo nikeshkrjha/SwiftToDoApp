@@ -8,6 +8,11 @@
 
 import UIKit
 
+
+protocol CreateTodoProtocol {
+    func reloadData()
+}
+
 class CreateTodoViewController: UIViewController {
 
     //MARK:- Outlets
@@ -17,6 +22,7 @@ class CreateTodoViewController: UIViewController {
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var cancelBtn: UIButton!
     
+    var createTodoProtcol: CreateTodoProtocol?
     
     //MARK:- ViewController methods
     override func viewDidLoad() {
@@ -53,6 +59,14 @@ class CreateTodoViewController: UIViewController {
     }
     
     @IBAction func saveTodoItem(_ sender: Any) {
+        var itemDict: [String: Any] = [:]
+        itemDict["title"] = todoTextView.text!
+        itemDict["completed"] = false
+        ApiHandler.createTodo(itemDict: itemDict) { (success, data) in
+            debugPrint(data.debugDescription)
+            self.createTodoProtcol?.reloadData()
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
 }

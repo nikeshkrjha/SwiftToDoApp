@@ -10,8 +10,10 @@ import Foundation
 import UIKit
 
 struct ApiConstants {
-    static let BaseURL: String = "https://jsonplaceholder.typicode.com/todos?_limit=20"
+    static let BaseURL: String = "http://reactlara.herokuapp.com/api/"
+    static let todosList: String = "todos"
     static let UpdateTodoURL = "https://jsonplaceholder.typicode.com/todos/"
+    static let createTodoURL = "user/1/todo"
 }
 
 

@@ -22,13 +22,33 @@ class ApiHandler {
     
     
     static func getTodoItemsList(completion: @escaping(Bool, [TodoItem?]) -> Void){
-        let URL = ApiConstants.BaseURL
+        let URL = ApiConstants.BaseURL + ApiConstants.todosList
         ProgressHud.showProgressHUDWtih(message: "Loading data...")
         Alamofire.request(URL).responseArray { (response: DataResponse<[TodoItem]>) in
             debugPrint("URL:  \(URL)")
             debugPrint(response.result.value?.toJSON())
             completion(true,response.result.value!)
         }
+    }
+    
+    
+    static func createTodo(itemDict: [String: Any], completion: @escaping(Bool, Data?) -> Void){
+        let URL = ApiConstants.BaseURL + ApiConstants.createTodoURL
+        let parameters = ["title": itemDict["title"], "completed": itemDict["completed"]] as! [String : Any]
+        let headers = ["Content-type": "application/json"]
+        
+        Alamofire.request(URL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers ).response { (response) in
+            debugPrint(response)
+            debugPrint(response.data?.description)
+            if response.error == nil {
+                completion(true, response.data)
+            }
+        }
+        
+//        Alamofire.request(URL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers ).responseJSON { (response) in
+//            debugPrint(response)
+//        }
+        
     }
     
     static func updateTodoItem(item: TodoItem, completion: @escaping(Bool, TodoItem?) -> Void){
