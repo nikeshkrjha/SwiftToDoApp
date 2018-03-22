@@ -34,20 +34,25 @@ class ApiHandler {
     
     static func createTodo(itemDict: [String: Any], completion: @escaping(Bool, Data?) -> Void){
         let URL = ApiConstants.BaseURL + ApiConstants.createTodoURL
-        let parameters = ["title": itemDict["title"], "completed": itemDict["completed"]] as! [String : Any]
+        let parameters = ["title": itemDict["title"], "completed": itemDict["completed"]] as? [String : Any]
         let headers = ["Content-type": "application/json"]
         
-        Alamofire.request(URL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers ).response { (response) in
+//        Alamofire.request(URL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers ).response { (response) in
+//            debugPrint(response)
+//            debugPrint(response.data?.description)
+//            if response.error == nil {
+//                completion(true, response.data)
+//            }
+//        }
+//
+        Alamofire.request(URL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers ).responseJSON { (response) in
             debugPrint(response)
-            debugPrint(response.data?.description)
-            if response.error == nil {
+            if response.error == nil{
                 completion(true, response.data)
+            }else{
+                completion(false, response.data)
             }
         }
-        
-//        Alamofire.request(URL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers ).responseJSON { (response) in
-//            debugPrint(response)
-//        }
         
     }
     

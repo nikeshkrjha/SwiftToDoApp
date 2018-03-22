@@ -64,7 +64,12 @@ class CreateTodoViewController: UIViewController {
         itemDict["completed"] = false
         ApiHandler.createTodo(itemDict: itemDict) { (success, data) in
             debugPrint(data.debugDescription)
-            self.createTodoProtcol?.reloadData()
+            if success{
+                self.createTodoProtcol?.reloadData()
+            }else{
+                ProgressHud.showError(errorString: "Something went wrong")
+            }
+            
             self.dismiss(animated: true, completion: nil)
         }
     }
